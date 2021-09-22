@@ -24,7 +24,7 @@
 <meta name="author" content="Lieven Clement" />
 
 
-<meta name="date" content="2021-09-21" />
+<meta name="date" content="2021-09-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -644,8 +644,8 @@ De onderzoekers opteerden daarom 10 personen een placebo behandeling geven, enke
 Microorganismen hebben een heel variabel stukje ribosomaal RNA, het 16s ribosomaal RNA dat uniek is voor de soort.
 Het 16S rRNA van de verschillende microorganismen in het staal wordt dan geamplificeerd en gescheiden op een DGGE gel.
 Waarbij een bandenpatroon ontstaat volgens de lengte van het 16s rRNA.</p>
-<p><img src="../figures/dgge.png" style="width:70.0%" />
-Foto van een DGGE gel van het oksel microbiome (bron: <a href="https://doi.org/10.1371/journal.pone.0070538" class="uri">https://doi.org/10.1371/journal.pone.0070538</a>)</p>
+<p><img src="figures/dgge.png" style="width:70.0%" /></p>
+<p>Foto van een DGGE gel van het oksel microbiome (bron: <a href="https://doi.org/10.1371/journal.pone.0070538" class="uri">https://doi.org/10.1371/journal.pone.0070538</a>)</p>
 <p>Elke band in de DGGE correspondeert met een bacterie.
 Hoe helderder de band hoe meer van de bacterie in het microbiome voorkomt.
 Band A staat voor Staphylococcus.
@@ -928,30 +928,27 @@ De scope van de studie moet goed worden omschreven voor de start van het experim
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="inleiding.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(NHANES)</span>
 <span id="cb14-2"><a href="inleiding.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(NHANES)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 76
-##      ID SurveyYr Gender   Age AgeDecade AgeMonths Race1 Race3 Education   
-##   &lt;int&gt; &lt;fct&gt;    &lt;fct&gt;  &lt;int&gt; &lt;fct&gt;         &lt;int&gt; &lt;fct&gt; &lt;fct&gt; &lt;fct&gt;       
-## 1 51624 2009_10  male      34 &quot; 30-39&quot;        409 White &lt;NA&gt;  High School 
-## 2 51624 2009_10  male      34 &quot; 30-39&quot;        409 White &lt;NA&gt;  High School 
-## 3 51624 2009_10  male      34 &quot; 30-39&quot;        409 White &lt;NA&gt;  High School 
-## 4 51625 2009_10  male       4 &quot; 0-9&quot;           49 Other &lt;NA&gt;  &lt;NA&gt;        
-## 5 51630 2009_10  female    49 &quot; 40-49&quot;        596 White &lt;NA&gt;  Some College
-## 6 51638 2009_10  male       9 &quot; 0-9&quot;          115 White &lt;NA&gt;  &lt;NA&gt;        
-## # … with 67 more variables: MaritalStatus &lt;fct&gt;, HHIncome &lt;fct&gt;, HHIncomeMid &lt;int&gt;,
-## #   Poverty &lt;dbl&gt;, HomeRooms &lt;int&gt;, HomeOwn &lt;fct&gt;, Work &lt;fct&gt;, Weight &lt;dbl&gt;,
-## #   Length &lt;dbl&gt;, HeadCirc &lt;dbl&gt;, Height &lt;dbl&gt;, BMI &lt;dbl&gt;, BMICatUnder20yrs &lt;fct&gt;,
-## #   BMI_WHO &lt;fct&gt;, Pulse &lt;int&gt;, BPSysAve &lt;int&gt;, BPDiaAve &lt;int&gt;, BPSys1 &lt;int&gt;,
-## #   BPDia1 &lt;int&gt;, BPSys2 &lt;int&gt;, BPDia2 &lt;int&gt;, BPSys3 &lt;int&gt;, BPDia3 &lt;int&gt;,
-## #   Testosterone &lt;dbl&gt;, DirectChol &lt;dbl&gt;, TotChol &lt;dbl&gt;, UrineVol1 &lt;int&gt;,
-## #   UrineFlow1 &lt;dbl&gt;, UrineVol2 &lt;int&gt;, UrineFlow2 &lt;dbl&gt;, Diabetes &lt;fct&gt;,
-## #   DiabetesAge &lt;int&gt;, HealthGen &lt;fct&gt;, DaysPhysHlthBad &lt;int&gt;,
-## #   DaysMentHlthBad &lt;int&gt;, LittleInterest &lt;fct&gt;, Depressed &lt;fct&gt;,
+##      ID SurveyYr Gender   Age AgeDecade AgeMonths Race1 Race3 Education   MaritalStatus HHIncome 
+##   &lt;int&gt; &lt;fct&gt;    &lt;fct&gt;  &lt;int&gt; &lt;fct&gt;         &lt;int&gt; &lt;fct&gt; &lt;fct&gt; &lt;fct&gt;       &lt;fct&gt;         &lt;fct&gt;    
+## 1 51624 2009_10  male      34 &quot; 30-39&quot;        409 White &lt;NA&gt;  High School Married       25000-34…
+## 2 51624 2009_10  male      34 &quot; 30-39&quot;        409 White &lt;NA&gt;  High School Married       25000-34…
+## 3 51624 2009_10  male      34 &quot; 30-39&quot;        409 White &lt;NA&gt;  High School Married       25000-34…
+## 4 51625 2009_10  male       4 &quot; 0-9&quot;           49 Other &lt;NA&gt;  &lt;NA&gt;        &lt;NA&gt;          20000-24…
+## 5 51630 2009_10  female    49 &quot; 40-49&quot;        596 White &lt;NA&gt;  Some Colle… LivePartner   35000-44…
+## 6 51638 2009_10  male       9 &quot; 0-9&quot;          115 White &lt;NA&gt;  &lt;NA&gt;        &lt;NA&gt;          75000-99…
+## # … with 65 more variables: HHIncomeMid &lt;int&gt;, Poverty &lt;dbl&gt;, HomeRooms &lt;int&gt;, HomeOwn &lt;fct&gt;,
+## #   Work &lt;fct&gt;, Weight &lt;dbl&gt;, Length &lt;dbl&gt;, HeadCirc &lt;dbl&gt;, Height &lt;dbl&gt;, BMI &lt;dbl&gt;,
+## #   BMICatUnder20yrs &lt;fct&gt;, BMI_WHO &lt;fct&gt;, Pulse &lt;int&gt;, BPSysAve &lt;int&gt;, BPDiaAve &lt;int&gt;,
+## #   BPSys1 &lt;int&gt;, BPDia1 &lt;int&gt;, BPSys2 &lt;int&gt;, BPDia2 &lt;int&gt;, BPSys3 &lt;int&gt;, BPDia3 &lt;int&gt;,
+## #   Testosterone &lt;dbl&gt;, DirectChol &lt;dbl&gt;, TotChol &lt;dbl&gt;, UrineVol1 &lt;int&gt;, UrineFlow1 &lt;dbl&gt;,
+## #   UrineVol2 &lt;int&gt;, UrineFlow2 &lt;dbl&gt;, Diabetes &lt;fct&gt;, DiabetesAge &lt;int&gt;, HealthGen &lt;fct&gt;,
+## #   DaysPhysHlthBad &lt;int&gt;, DaysMentHlthBad &lt;int&gt;, LittleInterest &lt;fct&gt;, Depressed &lt;fct&gt;,
 ## #   nPregnancies &lt;int&gt;, nBabies &lt;int&gt;, Age1stBaby &lt;int&gt;, SleepHrsNight &lt;int&gt;,
 ## #   SleepTrouble &lt;fct&gt;, PhysActive &lt;fct&gt;, PhysActiveDays &lt;int&gt;, TVHrsDay &lt;fct&gt;,
-## #   CompHrsDay &lt;fct&gt;, TVHrsDayChild &lt;int&gt;, CompHrsDayChild &lt;int&gt;,
-## #   Alcohol12PlusYr &lt;fct&gt;, AlcoholDay &lt;int&gt;, AlcoholYear &lt;int&gt;, SmokeNow &lt;fct&gt;,
-## #   Smoke100 &lt;fct&gt;, Smoke100n &lt;fct&gt;, SmokeAge &lt;int&gt;, Marijuana &lt;fct&gt;,
-## #   AgeFirstMarij &lt;int&gt;, RegularMarij &lt;fct&gt;, AgeRegMarij &lt;int&gt;, HardDrugs &lt;fct&gt;,
-## #   SexEver &lt;fct&gt;, SexAge &lt;int&gt;, SexNumPartnLife &lt;int&gt;, SexNumPartYear &lt;int&gt;,
+## #   CompHrsDay &lt;fct&gt;, TVHrsDayChild &lt;int&gt;, CompHrsDayChild &lt;int&gt;, Alcohol12PlusYr &lt;fct&gt;,
+## #   AlcoholDay &lt;int&gt;, AlcoholYear &lt;int&gt;, SmokeNow &lt;fct&gt;, Smoke100 &lt;fct&gt;, Smoke100n &lt;fct&gt;,
+## #   SmokeAge &lt;int&gt;, Marijuana &lt;fct&gt;, AgeFirstMarij &lt;int&gt;, RegularMarij &lt;fct&gt;, AgeRegMarij &lt;int&gt;,
+## #   HardDrugs &lt;fct&gt;, SexEver &lt;fct&gt;, SexAge &lt;int&gt;, SexNumPartnLife &lt;int&gt;, SexNumPartYear &lt;int&gt;,
 ## #   SameSex &lt;fct&gt;, SexOrientation &lt;fct&gt;, PregnantNow &lt;fct&gt;</code></pre>
 <p>We focussen in dit voorbeeld op het verschil in lengte tussen volwassen vrouwen en mannen in de Amerikaanse populatie.</p>
 <p>Onderzoeksvraag: hoe verschilt de lengte van volwassen mannen en vrouwen.</p>
